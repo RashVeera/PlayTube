@@ -13,7 +13,7 @@ const Filterbutton = () => {
     "Weight",
   ];
   return (
-    <div className="flex gap-3 pt-3 pl-3 ml-11 mt-24">
+    <div className="flex flex-wrap gap-3 pt-3 pl-3 mr-1 mb-2 ml-11 mt-24 ">
       {list.map((button) => {
         return <Button key={button} name={button} />;
       })}

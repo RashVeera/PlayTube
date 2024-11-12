@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# YouTube Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A YouTube clone built with React, Tailwind CSS, Redux, and YouTube APIs. 
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Search Bar with Autocomplete**: Integrated with Google Autocomplete API, featuring debouncing for smoother search experience.
+- **LRU Cache for Search**: Implemented using Redux to cache recent search results and reduce redundant API calls.
+- **Dynamic Routing**: Utilizes React Router with `createBrowserRouter` and `useSearchParams` for seamless page navigation.
+- **Video Display and Search Page**: Renders videos based on user queries, with navigation to a search page displaying relevant results.
+- **Watch Page**:
+  - **Video Playback**: On selecting a video, users are taken to a dedicated page to watch it.
+  - **Nested Comments**: Displays nested comments, simulating a comment hierarchy.
+  - **Live Chat**: A simulated live chat feature with messages generated randomly using `setInterval` inside `useEffect`, dispatched to the Redux chat store.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: For building the user interface with reusable components.
+- **Tailwind CSS**: For modern, responsive styling.
+- **Redux**: Manages application state, especially useful for the LRU cache and chat store.
+- **React Router**: Enables dynamic routing between pages.
+- **YouTube Data API**: Fetches video data and search results.
+- **Google Autocomplete API**: Suggests search queries as users type.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. **Clone the repository**:
+   ```bash
+   git clone <your-repo-url>
+   ```
+2. **Navigate to the project folder**:
+   ```bash
+    cd youtube-clone
+   ```
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+4. **Add API Keys**:
+- **Create a .env file in the root directory.**
+- **Add your Google Autocomplete and YouTube Data API keys:**
+   ```bash
+    REACT_APP_GOOGLE_AUTOCOMPLETE_API_KEY=your_google_api_key
+   ```
+5. **Run the application**
+    ```bash
+    npm start
+    ```
+## Usage
+- **Search for Videos**: Type in the search bar to view autocomplete suggestions and search results.
+- **Navigate to Video Page**: Click on a video thumbnail to access its watch page.
+- **View Comments and Chat**s: Interact with the nested comments and simulated live chat feature on the video page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
+- **Home Page**
+![HomePage](image.png)
 
-### `npm run build`
+- **Search Bar with Autocomplete Suggestions**
+![Autosuggestions](image-1.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Watch Page with Live API**
+![WatchPage](image-2.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Search Page**
+![search Page](image-3.png)

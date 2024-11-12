@@ -5,14 +5,14 @@ const Sidebar = () => {
   const showSidebar = useSelector((store) => store.app.isMenuOpen);
   return (
     showSidebar && (
-      <div className="bg-black text-white h-auto px-1 py-1 mt-20">
+      <div className="bg-black text-white h-auto px-1 py-1 mt-20 md:text-base text-sm">
         <ul className="py-3 px-2  ">
           <li className="py-1">Home</li>
           <li className="py-1">Shorts</li>
           <li className="py-1">Subscription</li>
         </ul>
         <hr className="bg-gray-400 " />
-        <div className="pt-3">
+        <div className="pt-3 hidden md:contents">
           <span className="font-semibold">Subscriptions</span>
           <ul className="py-3 px-2  ">
             <li>Watch Mojo.com</li>

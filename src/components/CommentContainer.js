@@ -102,7 +102,7 @@ const CommentList = ({ comments }) => {
 
 const CommentContainer = () => {
   return (
-    <div className="mt-2">
+    <div className=" mt-3 md:mt-2 border border-gray-700 rounded-lg h-36 md:h-96 overflow-y-auto no-scrollbar px-2 py-2 md:py-4">
       <span>Comments:</span>
 
       {<CommentList comments={commentData} />}

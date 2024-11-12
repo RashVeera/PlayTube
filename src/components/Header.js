@@ -71,10 +71,10 @@ const Header = () => {
   return (
     <div className="fixed w-screen z-10">
       <div className="grid grid-cols-12 bg-black shadow-lg py-2 px-4 ">
-        <div className="col-span-2 flex">
+        <div className="md:col-span-2 col-span-3 flex">
           <img
             onClick={() => handleclick()}
-            className="h-7 mt-4 cursor-pointer rounded-full"
+            className="md:h-7 h-6  md:mt-4 mt-5 cursor-pointer rounded-full"
             alt="hamburger"
             src="data:image/png;base64,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"
           />
@@ -86,7 +86,7 @@ const Header = () => {
             />
           </a>
         </div>
-        <div className="col-span-9">
+        <div className="md:col-span-9 col-span-7 md:-ml-0 -ml-28">
           <div className="flex ">
             <input
               value={searchText}
@@ -105,14 +105,14 @@ const Header = () => {
               <button className="mt-3">
                 <img
                   alt="search"
-                  className="h-[2.6rem] border object-contain border-gray-500 rounded-r-full bg-gray-900"
+                  className="md:h-[2.6rem] h-[2.5rem] border  border-gray-500 rounded-r-full bg-gray-900"
                   src={search_icon}
                 />
               </button>
             </a>
           </div>
           {showserchResults && searchapiText.length > 0 && (
-            <div className="flex flex-col gap-1 rounded-lg fixed bg-custom-grey w-[35rem] z-10 ml-28 px-7 py-2 mt-2">
+            <div className="flex flex-col gap-1 rounded-lg fixed bg-custom-grey w-[16rem] md:w-[18rem] lg:w-[25rem] xl:w-[33rem] z-10 ml-28 md:ml-32 px-7 py-2 mt-2">
               {searchapiText.map((item) => (
                 <span key={item} className="text-white">
                   {" "}
@@ -123,7 +123,7 @@ const Header = () => {
           )}
         </div>
 
-        <div className="flex col-span1-1">
+        <div className="flex md:col-span-1 col-span-2 md:mt-0 mt-1 ">
           <img
             className="h-8 mt-3 rounded-full"
             alt="user-icon"

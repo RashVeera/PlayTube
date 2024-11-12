@@ -35,7 +35,7 @@ const ResultSearches = () => {
   console.log(popularVideos);
 
   return (
-    <div className="flex flex-col gap-4 ml-28 mt-28">
+    <div className="flex flex-col gap-4 ml-10 md:ml-28 mt-28">
       {popularVideos.map((item) => {
         return (
           <Link key={item.id} to={"/watch?v=" + item.id}>

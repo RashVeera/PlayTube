@@ -29,7 +29,7 @@ const VideoContainer = ({ YOUTUBE_API_URL }) => {
   console.log(popularVideos);
 
   return (
-    <div className="flex flex-wrap gap-4 ml-11">
+    <div className="flex flex-wrap gap-2 md:gap-4 ml-11">
       {popularVideos.map((item) => {
         return (
           <Link key={item.id} to={"/watch?v=" + item.id}>

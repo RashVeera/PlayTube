@@ -5,16 +5,16 @@ const VideoCards = ({ props }) => {
   const viewMCount = Math.trunc(statistics.viewCount / 100000);
 
   return (
-    <div className="text-white w-80 my-4 ml-4 cursor-pointer">
+    <div className="text-white md:w-80 w-60 md:my-4 my-2 ml-4 hover:scale-[0.9] cursor-pointer">
       <img
         className="rounded-md"
         alt="vide_thumbnail"
         src={snippet.thumbnails.medium.url}
       />
-      <span className="block text-md mt-1 font-bold h-11 overflow-y-hidden">
+      <span className="block text-sm md:text-md mt-1 font-bold h-11 overflow-y-hidden">
         {snippet.title}
       </span>
-      <span className=" text-sm block pt-2 text-gray-400">
+      <span className=" text-xs md:text-sm block pt-2 text-gray-400">
         {snippet?.channelTitle}
       </span>
       {viewMCount !== 0 && (
