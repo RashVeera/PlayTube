@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/AppSlice";
 import { GOOGLE_API_KEY } from "../utils/constants";
-import ErrorPage from "./ErrorPage";
 import CommentContainer from "./CommentContainer";
 import ChatContainer from "./ChatContainer";
 
@@ -24,7 +23,7 @@ const WatchPage = () => {
           GOOGLE_API_KEY,
       );
       if (!response.ok) {
-        console.log(response);
+        // console.log(response);
         throw new Error(`API error: ${response.status}`);
       }
       const videoData = await response.json();
@@ -36,7 +35,7 @@ const WatchPage = () => {
           GOOGLE_API_KEY,
       );
       if (!channels.ok) {
-        console.log(channels);
+        // console.log(channels);
         throw new Error(`API error: ${channels.status}`);
       }
 
@@ -52,6 +51,7 @@ const WatchPage = () => {
     if (paramsid) {
       fetchChannelandVideo();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) {

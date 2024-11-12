@@ -1,7 +1,7 @@
 export const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API;
 
 export const autosuggest =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const keyword_search =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q="

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/AppSlice";
 import search_icon from "../assets/download.png";
 import { autosuggest } from "../utils/constants";
-import { cacheResults, removecacheResults } from "../utils/searchSlice";
+import {  cacheResults, removecacheResults } from "../utils/searchSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -18,6 +18,11 @@ const Header = () => {
   const handleclick = () => {
     dispatch(toggleMenu());
   };
+
+  const handleItemClick =(item) =>{
+    // console.log('tiem')
+    window.location.href="/search?q="+item
+  }
   const autosuggestionsapi = async () => {
     const autosuggestions = autosuggest + searchText;
     // console.log('API Call - '+searchText)
@@ -67,6 +72,7 @@ const Header = () => {
     return () => {
       clearTimeout(timer);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText, pops]);
   return (
     <div className="fixed w-screen z-10">
@@ -90,12 +96,11 @@ const Header = () => {
           <div className="flex ">
             <input
               value={searchText}
-              onChange={(e) => setsearchText(e.target.value)}
-              onFocus={() => {
-                setshowserchResults(true);
-              }}
-              onKeyPress={handleKeyPress}  
-              onBlur={() => setshowserchResults(false)}
+              onChange={(e) => {setsearchText(e.target.value)}}
+              onKeyPress={handleKeyPress}     
+              onFocus={() => setshowserchResults(true)} // Show results on focus
+              onBlur={() => setTimeout(() => setshowserchResults(false), 200)} // Hide results on blur (with delay to avoid click misfire)
+  
               className="h-10 mt-3 w-1/2 ml-28 rounded-l-full border border-gray-500 text-gray-500 px-5 py-2 bg-black"
               placeholder="Search"
               type="text"
@@ -112,13 +117,15 @@ const Header = () => {
             </a>
           </div>
           {showserchResults && searchapiText.length > 0 && (
-            <div className="flex flex-col gap-1 rounded-lg fixed bg-custom-grey w-[16rem] md:w-[18rem] lg:w-[25rem] xl:w-[33rem] z-10 ml-28 md:ml-32 px-7 py-2 mt-2">
+            <div onFocus={() => {
+            }} className="flex flex-col gap-1 rounded-lg fixed bg-custom-grey w-[16rem] md:w-[18rem] lg:w-[25rem] xl:w-[33rem] z-10 ml-28 md:ml-32 px-7 py-2 mt-2">
+            <ul >
               {searchapiText.map((item) => (
-                <span key={item} className="text-white">
-                  {" "}
-                  {item}
-                </span>
+                <li  onClick={()=>handleItemClick(item)}  key={item} className="text-white  hover:bg-slate-700 hover:cursor-pointer">
+                  {' '+item}
+                </li>
               ))}
+              </ul>
             </div>
           )}
         </div>

@@ -15,6 +15,7 @@ const VideoContainer = ({ YOUTUBE_API_URL }) => {
   };
   useEffect(() => {
     fetchVideos();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) {
@@ -26,7 +27,7 @@ const VideoContainer = ({ YOUTUBE_API_URL }) => {
   if (popularVideos.length === 0) {
     return <div>Loading...</div>;
   }
-  console.log(popularVideos);
+  // console.log(popularVideos);
 
   return (
     <div className="flex flex-wrap gap-2 md:gap-4 ml-11">

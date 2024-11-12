@@ -21,6 +21,7 @@ const ResultSearches = () => {
   };
   useEffect(() => {
     fetchVideos();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) {
@@ -38,7 +39,7 @@ const ResultSearches = () => {
     <div className="flex flex-col gap-4 ml-10 md:ml-28 mt-28">
       {popularVideos.map((item) => {
         return (
-          <Link key={item.id} to={"/watch?v=" + item.id}>
+          <Link key={item.id.videoId} to={"/watch?v=" + item.id.videoId}>
             <SearchitemCards props={item} />{" "}
           </Link>
         );
