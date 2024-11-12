@@ -1,5 +1,4 @@
 import "./App.css";
-import Header from "./components/Header";
 import Body from "./components/Body";
 import store from "./utils/Appstore";
 import { Provider } from "react-redux";
@@ -32,7 +31,6 @@ function App() {
   return (
     <Provider store={store}>
       <div className="flex-col  bg-black">
-        <Header />
         {/* <Body/> */}
         <RouterProvider router={appRouter} />
       </div>

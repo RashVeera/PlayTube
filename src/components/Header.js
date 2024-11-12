@@ -4,9 +4,11 @@ import { toggleMenu } from "../utils/AppSlice";
 import search_icon from "../assets/download.png";
 import { autosuggest } from "../utils/constants";
 import {  cacheResults, removecacheResults } from "../utils/searchSlice";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const [searchText, setsearchText] = useState("");
   const [searchapiText, setsearchapiText] = useState([]);
   const [showserchResults, setshowserchResults] = useState(false);
@@ -21,7 +23,7 @@ const Header = () => {
 
   const handleItemClick =(item) =>{
     // console.log('tiem')
-    window.location.href="/search?q="+item
+    navigate("/search?q="+item)
   }
   const autosuggestionsapi = async () => {
     const autosuggestions = autosuggest + searchText;
@@ -51,7 +53,7 @@ const Header = () => {
   };
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      window.location.href = `/search?q=${searchText}`;  
+      navigate(`/search?q=${searchText}`);  
     }
   };
 
@@ -99,8 +101,7 @@ const Header = () => {
               onChange={(e) => {setsearchText(e.target.value)}}
               onKeyPress={handleKeyPress}     
               onFocus={() => setshowserchResults(true)} // Show results on focus
-              onBlur={() => setTimeout(() => setshowserchResults(false), 200)} // Hide results on blur (with delay to avoid click misfire)
-  
+              onBlur={() => setTimeout(() => setshowserchResults(false), 300)} // Hide results on blur (with delay to avoid click misfire)
               className="h-10 mt-3 w-1/2 ml-28 rounded-l-full border border-gray-500 text-gray-500 px-5 py-2 bg-black"
               placeholder="Search"
               type="text"
@@ -117,8 +118,7 @@ const Header = () => {
             </a>
           </div>
           {showserchResults && searchapiText.length > 0 && (
-            <div onFocus={() => {
-            }} className="flex flex-col gap-1 rounded-lg fixed bg-custom-grey w-[16rem] md:w-[18rem] lg:w-[25rem] xl:w-[33rem] z-10 ml-28 md:ml-32 px-7 py-2 mt-2">
+            <div className="flex flex-col gap-1 rounded-lg fixed bg-custom-grey w-[16rem] md:w-[18rem] lg:w-[25rem] xl:w-[33rem] z-10 ml-28 md:ml-32 px-7 py-2 mt-2">
             <ul >
               {searchapiText.map((item) => (
                 <li  onClick={()=>handleItemClick(item)}  key={item} className="text-white  hover:bg-slate-700 hover:cursor-pointer">
