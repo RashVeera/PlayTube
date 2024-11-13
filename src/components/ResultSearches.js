@@ -22,7 +22,7 @@ const ResultSearches = () => {
   useEffect(() => {
     fetchVideos();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [paramsid]);
 
   if (error) {
     return (
@@ -33,7 +33,7 @@ const ResultSearches = () => {
   if (popularVideos.length === 0) {
     return <div>Loading...</div>;
   }
-  console.log(popularVideos);
+  // console.log(popularVideos);
 
   return (
     <div className="flex flex-col gap-4 ml-10 md:ml-28 mt-28">
