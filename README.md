@@ -2,6 +2,9 @@
 
 A YouTube clone built with React, Tailwind CSS, Redux, and YouTube APIs. 
 
+## Live Site
+[Visit the Live Site](https://playtube-cba34.web.app/)
+
 ## Features
 
 - **Search Bar with Autocomplete**: Integrated with Google Autocomplete API, featuring debouncing for smoother search experience.
@@ -63,3 +66,8 @@ A YouTube clone built with React, Tailwind CSS, Redux, and YouTube APIs.
 
 - **Search Page**
 ![search Page](image-3.png)
+
+
+- **Watch the Youtube Video:**
+
+[![Watch the demo](image.png)](https://www.youtube.com/watch?v=SaZuABK_xrs)
